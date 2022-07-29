@@ -1,8 +1,13 @@
 import type { NextPage } from 'next'
+import AboutSection from '../components/AboutSection/AboutSection'
+import ServicesSection from '../components/ServicesSection/ServicesSection'
 
 const Home: NextPage = () => {
   return (
-    <h1>Hello World</h1>
+    <>
+      <AboutSection/>
+      <ServicesSection/>
+    </>
   )
 }
 
