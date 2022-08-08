@@ -12,6 +12,7 @@ const Home: NextPage = () => {
       <AboutSection/>
       <ServicesSection/>
       <FaqSection/>
+      
     </>
   )
 }
