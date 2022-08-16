@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
+import { GetStaticProps } from "next"
 import React from "react"
 import { NavSection } from "./styles"
 
@@ -19,4 +20,10 @@ export default function Nav(){
             </ul>
         </NavSection>
     )
+}
+export const getStaticProps: GetStaticProps = async () => {
+    return {
+      props: {},
+      revalidate: 60,
+    }
 }
