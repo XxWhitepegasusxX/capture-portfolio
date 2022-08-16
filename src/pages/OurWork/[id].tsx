@@ -2,6 +2,8 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { MovieState } from "../../../movieState";
+import {motion} from 'framer-motion'
+import { pageAnimation } from '../../animation'
 
 type Movie = {
     title: string;
@@ -37,7 +39,7 @@ export default function MovieDetail(props: any){
     }, [movies, url]);
 
     return(
-        <>
+        <motion.div variants={pageAnimation} initial="hidden" animate="show">
         {movie && (
             <Details>
                 <HeadLine>
@@ -54,7 +56,7 @@ export default function MovieDetail(props: any){
                 </ImageDisplay>
             </Details>
         )}
-        </>
+        </motion.div>
     )
 
 }

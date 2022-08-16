@@ -1,3 +1,4 @@
+import { GetStaticProps } from "next"
 import React from "react"
 import { Faq } from './styles'
 
@@ -51,4 +52,10 @@ export default function FaqSection(){
             </div>
         </Faq>
     )
+}
+export const getStaticProps: GetStaticProps = async () => {
+    return {
+      props: {},
+      revalidate: 60,
+    }
 }

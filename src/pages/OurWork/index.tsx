@@ -1,9 +1,12 @@
+import { GetStaticProps } from "next";
 import React from "react";
 import styled from 'styled-components'
+import {motion} from 'framer-motion'
+import { pageAnimation } from '../../animation'
 
 export default function OurWork(){
     return(
-        <Work>
+        <Work variants={pageAnimation} initial="hidden" animate="show">
             <Movie>
                 <h2>The Athlete</h2>
                 <div className="line"></div>
@@ -29,7 +32,15 @@ export default function OurWork(){
     )
 }
 
-const Work = styled.div`
+export const getStaticProps: GetStaticProps = async () => {
+    return {
+      props: {},
+      revalidate: 60,
+    }
+}
+
+
+const Work = styled(motion.div)`
     min-height: 100vh;
     overflow: hidden;
     padding: 5rem 10rem;

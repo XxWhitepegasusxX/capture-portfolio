@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import { GetStaticProps } from "next";
 import React from "react";
 import { Services, Description, Image, Cards, Card } from "./styles";
 
@@ -46,4 +47,10 @@ export default function ServicesSection(){
         </Services>
         </>
     )
+}
+export const getStaticProps: GetStaticProps = async () => {
+    return {
+      props: {},
+      revalidate: 60,
+    }
 }

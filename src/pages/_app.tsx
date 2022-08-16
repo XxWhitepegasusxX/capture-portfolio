@@ -1,14 +1,15 @@
 import type { AppProps } from 'next/app'
 import GlobalStyle from '../styles/GlobalStyle'
 import Nav from '../components/Nav'
+import { AnimatePresence } from 'framer-motion'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <>
-    <GlobalStyle/>
-    <Nav/>
-    <Component {...pageProps} />
-    </>
+    <AnimatePresence>
+      <GlobalStyle/>
+      <Nav/>
+      <Component {...pageProps} />
+    </AnimatePresence>
   )
 }
 
